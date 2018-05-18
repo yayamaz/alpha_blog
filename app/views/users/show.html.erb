@@ -1,3 +1,11 @@
-<h1 align="center">THis is user show</h1>
+<h1 align="center">Welcome to <%= @user.username %>'s page </h1>
 
-the user is <%= @user.username %>
+<div class ="row">
+  <div class ="cold-md-4 cold-md-offset-4 center">
+    <%= gravatar_for @user, size: 150 %>
+    
+  </div>
+</div>
+
+<h4 align="center"><%= @user.username %>'s articles</h4>
+<%= render 'articles/article', obj: @user.articles %>
